@@ -11,10 +11,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   # ─── Backend ────────────────────────────────────────────────────────────────
   backend:
-    name: Backend (PHP 8.3 / Laravel)
+    name: Backend (PHP 8.4 / Laravel)
     runs-on: ubuntu-latest
 
     defaults:
@@ -25,10 +28,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup PHP 8.3
+      - name: Setup PHP 8.4
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: "8.4"
           extensions: mbstring, bcmath, sqlite3, pdo_sqlite
           ini-values: error_reporting=E_ALL
           coverage: none

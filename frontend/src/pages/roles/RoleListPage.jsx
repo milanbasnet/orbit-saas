@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { createRole, deleteRole, getAllPermissions, getRoles, updateRole } from "../../services/roles";
 
+// eslint-disable-next-line no-unused-vars
 const ALL_GROUPS = ["products", "customers", "orders", "users", "roles"];
 
 export default function RoleListPage() {
