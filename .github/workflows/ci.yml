@@ -33,7 +33,6 @@ jobs:
         with:
           php-version: "8.4"
           extensions: mbstring, bcmath, sqlite3, pdo_sqlite
-          ini-values: error_reporting=E_ALL
           coverage: none
 
       - name: Cache Composer packages
